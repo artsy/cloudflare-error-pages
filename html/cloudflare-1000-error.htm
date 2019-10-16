@@ -198,7 +198,18 @@
       </ul>
     </footer>
 
-    <img src="https://volley.artsy.net/cloudflareError.png?cloudflareErrorType=1000&rayID=::RAY_ID::&clientIP=::CLIENT_IP::" />
+    <div id="error">
+      <div id="rayID">::RAY_ID::</div>
+      <div id="clientIP">::CLIENT_IP::</div>
+    </div>
+
+    <script>
+      var rayID = document.getElementById("rayID").innerHTML;
+      var clientIP = document.getElementById("clientIP").innerHTML;
+      var errorReport = document.createElement("IMG");
+      errorReport.src = 'https://volley.artsy.net/cloudflareError.png?cloudflareErrorType=1000&rayID=' + rayID + '&clientIP=' + clientIP;
+      document.getElementById("error").appendChild(errorReport);
+    </script>
 
     <script>
       document.getElementById(
